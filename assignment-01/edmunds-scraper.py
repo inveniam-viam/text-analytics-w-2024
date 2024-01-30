@@ -11,7 +11,7 @@ entry: list = []
 urlnumber: int = 2 # Give the page number to start with
 
 
-while urlnumber < 100: # Give the page number to end with
+while urlnumber < 397: # Give the page number to end with
 
     url: str = f"https://forums.edmunds.com/discussion/7526/general/x/midsize-sedans-2-0/p{urlnumber}"
 
@@ -71,8 +71,8 @@ while urlnumber < 100: # Give the page number to end with
 # Convert a list of byte to list a of string     
 stringlist=[[x.decode('iso-8859-1') for x in entry] for entry in entries]
 # Save the list to a csv file
-with open('edmunds_extraction.csv', 'w') as output:
+with open('edmunds_extraction-2.csv', 'w') as output:
     writer = csv.writer(output, quoting=csv.QUOTE_ALL)
     writer.writerows(stringlist)
 
-print("Wrote to edmunds_extraction.csv")
+print("Wrote to edmunds_extraction-2.csv")
